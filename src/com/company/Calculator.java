@@ -31,6 +31,8 @@ public class Calculator {
 		System.out.println("enter operation (only '+' is available) to perform or q if you want to quit:");
 
 		operation = scanner.nextLine();
+
+		//to remove when other operations added
 		if (!"+".equals(operation))  {
 			throw new UnsupportedOperationException(String.format("The operation '%s' is not supported", operation));
 		}
