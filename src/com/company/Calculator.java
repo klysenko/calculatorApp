@@ -17,13 +17,13 @@ public class Calculator {
 		while (!"q".equals(operation)) {
 			try {
 				System.out.println(calculationStep());
-			} catch (InputMismatchException ex){
+			} catch (NumberFormatException ex){
 				System.out.println("Wrong input data!");
 			}
 		}
 	}
 
-	private double calculationStep() throws InputMismatchException {
+	public double calculationStep() {
 		System.out.println("enter first number:");
 		int firstNumber = Integer.parseInt(scanner.nextLine());
 		System.out.println("enter second number:");
@@ -31,11 +31,6 @@ public class Calculator {
 		System.out.println("enter operation (only '+' is available) to perform or q if you want to quit:");
 
 		operation = scanner.nextLine();
-
-		//to remove when other operations added
-		if (!"+".equals(operation))  {
-			throw new UnsupportedOperationException(String.format("The operation '%s' is not supported", operation));
-		}
 
 		return performOperation(firstNumber, secondNumber);
 	}
@@ -47,6 +42,9 @@ public class Calculator {
 			case "+":
 				result = plus(firstNumber, secondNumber);
 				break;
+			case "/":
+				result = divide(firstNumber, secondNumber);
+				break;
 			default:
 				result = 0;
 				break;
@@ -57,6 +55,10 @@ public class Calculator {
 
 	private int plus(int numberOne, int numberTwo){
 		return numberOne + numberTwo;
+	}
+
+	private double divide(int numberOne, double numberTwo){
+		return numberOne / numberTwo;
 	}
 
 }

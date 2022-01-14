@@ -1,10 +1,11 @@
-package com.company;
+package com.company.doors;
 
 public abstract class Door {
 	String shape;
 	String color;
 
 	public Door(String shape, String color) {
+		System.out.println("door constructor");
 		this.shape = shape;
 		this.color = color;
 	}

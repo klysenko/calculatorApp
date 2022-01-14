@@ -1,18 +1,18 @@
 package com.company.doors;
 
-public class RightDoor extends Door {
+public class SlidingDoor extends Door{
 
-	public RightDoor(String shape, String color) {
+	public SlidingDoor(String shape, String color) {
 		super(shape, color);
 	}
 
 	@Override
 	public void openDoor() {
-		System.out.println("open from right");
+		System.out.println("Open sliding door");
 	}
 
 	@Override
 	public void closeDoor() {
-
+		System.out.println("Close sliding door");
 	}
 }
