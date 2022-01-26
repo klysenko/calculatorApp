@@ -1,86 +1,19 @@
 package com.company;
 
+import com.company.enums.PlaneTypes;
+
 public class Plane {
 
 		private int id;
-		private int capacity;
 		private int wings;
 		private String name;
-		private String engine;
-		private String type;
+		private PlaneTypes type;
 
-	public Plane(int id, int capacity, int wings, String name, String engine, String type) {
+	public Plane(int id, int wings, String name, PlaneTypes type) {
 		this.id = id;
-		this.capacity = capacity;
 		this.wings = wings;
 		this.name = name;
-		this.engine = engine;
 		this.type = type;
-	}
-
-	public Plane(int id) {
-		this.id = id;
-	}
-
-	public void move(int distanceKm) {
-			System.out.println("I am moving" + distanceKm);
-		}
-
-		@Override
-	public String toString() {
-		return "Plane{" +
-				"id=" + id +
-				", capacity=" + capacity +
-				", type='" + type + '\'' +
-				'}';
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public void setCapacity(int capacity) {
-		this.capacity = capacity;
-	}
-
-	public void setWings(int wings) {
-		this.wings = wings;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public int getCapacity() {
-		return capacity;
-	}
-
-	public int getWings() {
-		return wings;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public String getEngine() {
-		return engine;
-	}
-
-	public String getType() {
-		return type;
 	}
 
 	@Override
@@ -97,29 +30,64 @@ public class Plane {
 		if (id != plane.id) {
 			return false;
 		}
-		if (capacity != plane.capacity) {
-			return false;
-		}
 		if (wings != plane.wings) {
 			return false;
 		}
-		if (!name.equals(plane.name)) {
+		if (name != null ? !name.equals(plane.name) : plane.name != null) {
 			return false;
 		}
-		if (!engine.equals(plane.engine)) {
-			return false;
-		}
-		return type.equals(plane.type);
+		return type == plane.type;
 	}
 
 	@Override
 	public int hashCode() {
 		int result = id;
-		result = 31 * result + capacity;
 		result = 31 * result + wings;
-		result = 31 * result + name.hashCode();
-		result = 31 * result + engine.hashCode();
-		result = 31 * result + type.hashCode();
+		result = 31 * result + (name != null ? name.hashCode() : 0);
+		result = 31 * result + (type != null ? type.hashCode() : 0);
 		return result;
 	}
+
+	@Override
+	public String toString() {
+		return "Plane{" +
+				"id=" + id +
+				", wings=" + wings +
+				", name='" + name + '\'' +
+				", type=" + type +
+				'}';
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getWings() {
+		return wings;
+	}
+
+	public void setWings(int wings) {
+		this.wings = wings;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public PlaneTypes getType() {
+		return type;
+	}
+
+	public void setType(PlaneTypes type) {
+		this.type = type;
+	}
+
 }
