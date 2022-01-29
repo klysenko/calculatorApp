@@ -89,5 +89,4 @@ public class Plane {
 	public void setType(PlaneTypes type) {
 		this.type = type;
 	}
-
 }
