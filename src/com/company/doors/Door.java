@@ -1,11 +1,10 @@
 package com.company.doors;
 
 public abstract class Door {
-	String shape;
-	String color;
+	private String shape;
+	private String color;
 
 	public Door(String shape, String color) {
-		System.out.println("door constructor");
 		this.shape = shape;
 		this.color = color;
 	}
@@ -14,5 +13,13 @@ public abstract class Door {
 	public abstract void closeDoor();
 	public String getColor() {
 		return color;
+	}
+
+	@Override
+	public String toString() {
+		return "Door{" +
+				"shape='" + shape + '\'' +
+				", color='" + color + '\'' +
+				'}';
 	}
 }

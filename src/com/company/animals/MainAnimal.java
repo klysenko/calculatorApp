@@ -1,5 +1,9 @@
 package com.company.animals;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+
 public class MainAnimal {
 
 	public static void main(String[] args){
@@ -9,11 +13,14 @@ public class MainAnimal {
 
 		PetWalker petWalker = new PetWalker();
 
-		Animal [] animals = {cat, horse, oneMoreCat};
+		List<Animal> animals = Arrays.asList(cat, oneMoreCat, horse);
+		List<Cat> cats = Arrays.asList(cat, oneMoreCat);
+		List<Horse> horses = Arrays.asList(horse);
 
 		for (Animal animal: animals) {
 			petWalker.walk(animal);
 		}
+		PetWalker.checkAnimals(cats);
 
 	}
 }
