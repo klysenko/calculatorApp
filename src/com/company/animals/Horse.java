@@ -1,5 +1,7 @@
 package com.company.animals;
 
+import com.company.annotations.AccessToRestrictedBox;
+
 public class Horse extends Animal{
 
 	public Horse(String name, int weight, String type) {

@@ -1,5 +1,8 @@
 package com.company.animals;
 
+import com.company.annotations.AccessToRestrictedBox;
+
+@AccessToRestrictedBox
 public class Cat extends Animal{
 
 	public Cat(String name, int weight, String type) {
@@ -8,7 +11,7 @@ public class Cat extends Animal{
 
 	@Override
 	public void makeSound() {
-		System.out.println("Cat make sound");
+
 	}
 
 	@Override

@@ -35,5 +35,17 @@ package com.company.animals;
 					", type='" + type + '\'' +
 					'}';
 		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public void setWeight(int weight) {
+			this.weight = weight;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
 	}
 
